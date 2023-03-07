@@ -1,7 +1,7 @@
 ---
 layout: post
 title: unity Title UI 및 로그인 환경 만들기
-categories : unity
+categories : unity study
 tag : unity
 ---
 

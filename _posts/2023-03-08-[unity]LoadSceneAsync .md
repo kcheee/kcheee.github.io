@@ -2,7 +2,7 @@
 layout: post
 title: unity 비동기 씬 로딩하기
 categories : unity study
-tag : unity,비동기
+tag : [unity,비동기]
 ---
 
 # 비동기 씬 로딩하기
