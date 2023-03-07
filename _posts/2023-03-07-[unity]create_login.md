@@ -8,7 +8,7 @@ tag : unity
 # 로그인 씬 만들기
 
 ## UI
-![텍스트](post/2023-03-07/login1.png)
+![텍스트](https://user-images.githubusercontent.com/86779278/223425704-cbb5b57c-d080-4b45-ad31-4a336a43c810.png)
 
 아이디와 비밀번호를 입력할 Input Field를 생성하고, 회원가입과 로그인 버튼을 만들어준다.
 
