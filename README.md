@@ -1,2 +1,2 @@
-# 깃 블로그 kcheee.github.io
+# [블로그][https://kcheee.github.io/]
 
