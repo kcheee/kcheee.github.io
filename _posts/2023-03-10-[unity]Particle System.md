@@ -9,39 +9,30 @@ tag : [unity,Particle System]
 
 **Duration** : 지속시간. 
 
- 
-
 **Looping** :반복여부.
-
- 
 
 **Prewarm**: 예열기간. 처음부터 입자가 모두 방출된채로 시작할건지/ 서서히 방출하기 시작할건지 
 
- 
 
 **Start Delay** : 시스템이 활성화된 후 방출을 시작하기까지 기다리는 지연 시간
-
- 
-
 **Start Lifetime** :생명주기. 입자가 생성되고 언제 사라지는지
 
 **Start speed** :입자 방출 속도
 
-**Constant** :상수 (고정값)
-
-**Curve** :  곡선
-
-**Random Between Two Constants**: 두 상수사이에서 랜덤하게 선택.
-
-**Random Between Two Curves** : 두 곡선사이에서 랜덤하게 선택.
-
- 
 
 **3D Start Size**: 3D 시작 크기
 
  
 
 **Start Size**: 시작 크기
+
+- **Constant** :상수 (고정값)
+
+- **Curve** :  곡선
+
+- **Random Between Two Constants**: 두 상수사이에서 랜덤하게 선택.
+
+- **Random Between Two Curves** : 두 곡선사이에서 랜덤하게 선택.
 
 
 **Start Rotation** : 시작각도
