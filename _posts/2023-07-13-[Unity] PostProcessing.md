@@ -11,7 +11,8 @@ tag : [unity,PostProcessing]
 
 bulit in은 따로 postprocessing을 받아야한다.   
 
-URP,HDRP는 자동으로 생성 
+URP,HDRP는 자동으로 생성
+volume으로 진행
 
 ----   
 
