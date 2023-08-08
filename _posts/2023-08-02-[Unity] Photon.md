@@ -17,7 +17,7 @@ tag : [unity,Photon]
 
 ![image](https://github.com/kcheee/kcheee/assets/86779278/37d77856-9894-4f72-9469-6f14abc48edd)    
 
-Photon 기본 설정
+### Photon 기본 설정
 
 ![image](https://github.com/kcheee/kcheee/assets/86779278/be70e1e6-1daf-4540-8532-2141c8336529)   
 
@@ -172,7 +172,8 @@ Photon에서는 Resources 폴더를 잘 사용해야 한다.
 
 ### 서버에 값을 던져주는 인터페이스 IPunObserbable   
 
-계속 변화하는 어떤 것을 네트워크에 동기화시켜주기 위한 인터페이스
+계속 변화하는 어떤 것을 네트워크에 동기화시켜주기 위한 인터페이스   
+
 PlayerMove Script
 ```c#
 using System.Collections;
@@ -299,6 +300,7 @@ photonView.RPC("함수 이름", RpcTarget.All);
 
 Rpc 함수는 서버 세팅에 Rpc List로 나오게 된다.
 
-![image](https://github.com/kcheee/kcheee/assets/86779278/83527366-7d74-42e5-a86e-4a9678845787)
 
+![image](https://github.com/kcheee/kcheee/assets/86779278/83527366-7d74-42e5-a86e-4a9678845787)   
 
+**Rpc 순서 주의**
