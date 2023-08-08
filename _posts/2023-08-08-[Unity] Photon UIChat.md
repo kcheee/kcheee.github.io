@@ -1,6 +1,6 @@
 ---
 layout: post
-title: unity Photon Chat 기능
+title: unity Photon Chat
 categories : unity study Photon Chat
 tag : [unity,Photon,Chat,UI]
 ---
