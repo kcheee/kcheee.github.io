@@ -18,8 +18,10 @@ ChatManager 오브젝트를 하나 만들고, Photon View 컴포넌트를 넣어
 <br/>   
 
 **ChatManager Script**   
-   
-   
+
+  - - -    
+
+  
 ```C#
 using System.Collections;
 using System.Collections.Generic;
@@ -135,6 +137,8 @@ public class ChatManager : MonoBehaviourPun
     }
 }
 ```   
+
+
 <br/>  
 
 ### Test      
