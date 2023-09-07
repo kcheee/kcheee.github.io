@@ -42,9 +42,11 @@ Empty
 <hr>
 
 <h5>입출력 예</h5>
+
+<span style="color:white">
 <table class="table">
         <thead><tr>
-<th>s</th>
+<th> s</th>
 <th>answer</th>
 </tr>
 </thead>
@@ -66,6 +68,7 @@ Empty
 </tr>
 </tbody>
       </table>
+      </span>
 <h5>입출력 예 설명</h5>
 
 <p>입출력 예 #1,2,3,4<br>
