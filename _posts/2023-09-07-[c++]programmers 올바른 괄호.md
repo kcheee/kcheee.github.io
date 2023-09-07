@@ -43,7 +43,7 @@ Empty
 
 <h5>입출력 예</h5>
 
-<span style="color:white">
+<span style="color:blue">
 <table class="table">
         <thead><tr>
 <th> s</th>
@@ -68,7 +68,7 @@ Empty
 </tr>
 </tbody>
       </table>
-      </span>
+</span>
 <h5>입출력 예 설명</h5>
 
 <p>입출력 예 #1,2,3,4<br>
@@ -77,11 +77,12 @@ Empty
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
-// 틀렸던 문제   
+### 틀렸던 문제   
 
 카운트를 세서 같으면 정답이라고 단순하게 생각을 했지만 반례가 있었다..   
 
-// 반례 "())(()"   
+반례 "())(()"   
+
 
 ```c++
 bool solution(string s)
@@ -98,7 +99,7 @@ bool solution(string s)
 
 ```
 
-// 정답
+### 정답
 
 ```c++
 #include <iostream>
