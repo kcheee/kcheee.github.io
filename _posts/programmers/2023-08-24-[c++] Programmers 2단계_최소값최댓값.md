@@ -1,7 +1,7 @@
 ---
 layout: post
 title: programmers 2단계 최댓값 최소값
-categories : programmers
+categories : programmers 2단계
 tag : [programmers,sort,2단계]
 ---
 
