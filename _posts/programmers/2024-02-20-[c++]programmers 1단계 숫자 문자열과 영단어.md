@@ -5,6 +5,12 @@ categories : programmers 1단계
 tag : [programmers,1단계,map,regex,정규표현식]
 ---
 
+<style>
+    table, th, td {
+        color: white;
+    }
+</style>
+
 # [level 1] 숫자 문자열과 영단어 - 81301 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/81301) 

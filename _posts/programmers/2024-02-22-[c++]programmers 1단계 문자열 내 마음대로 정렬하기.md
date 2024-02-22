@@ -5,6 +5,12 @@ categories : programmers 1단계
 tag : [programmers,1단계,sort]
 ---
 
+<style>
+    table, th, td {
+        color: white;
+    }
+</style>
+
 # [level 1] 문자열 내 마음대로 정렬하기 - 12915 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12915) 
