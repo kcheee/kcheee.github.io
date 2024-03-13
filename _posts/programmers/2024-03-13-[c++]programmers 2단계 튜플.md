@@ -139,13 +139,13 @@ tag : [programmers,set,sort stringstream]
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
 
 ## 풀이
-   
 
-### 나의 정답 풀이   
 
-1. 처음과 끝의 중괄호를 삭제.   
+### 나의 정답 풀이
+
+1. 처음과 끝의 중괄호를 삭제.    
 2. 중괄호 안에 있는 값을 ans vector에 저장후 sort.      
-3. ',' 기준으로 set STL을 사용하여 처음 나오는 숫자와 중복된 값을 구분하여 answer에 push   
+3. ',' 기준으로 set STL을 사용하여 처음 나오는 숫자와 중복된 값을 구분하여 answer에 push    
 
 ```c++
 #include <string>
@@ -196,12 +196,12 @@ vector<int> solution(string s) {
     
     return answer;
 }
-```    
+``` 
 
-### 다른 사람 풀이   
+### 다른 사람 풀이  
 
 
-s의 인덱스를 사용하여 먼저 오는 원소의 인덱스랑 뒤에 있는 원소의 인덱스랑 비교하여 sort해서 풀었다.   
+s의 인덱스를 사용하여 먼저 오는 원소의 인덱스랑 뒤에 있는 원소의 인덱스랑 비교하여 sort해서 풀었다.  
 이런 방법도 있구나...
 
 ``` c++
