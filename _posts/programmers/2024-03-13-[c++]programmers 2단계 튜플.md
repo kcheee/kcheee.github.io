@@ -1,8 +1,8 @@
 ---
 layout: post
-title: programmers 2단계 튜플
+title: programmers 2단계 tuple
 categories : programmers 2단계
-tag : [programmers]
+tag : [programmers,set,sstream]
 ---
 
 <style>
