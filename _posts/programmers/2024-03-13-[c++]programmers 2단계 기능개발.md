@@ -2,7 +2,7 @@
 layout: post
 title: programmers 2단계 기능개발
 categories : programmers 2단계
-tag : [programmers ]
+tag : [programmers]
 ---
 
 <style>
@@ -17,7 +17,7 @@ tag : [programmers ]
 
 ### 성능 요약
 
-메모리: 4.2 MB, 시간: 0.02 ms
+메모리: 4.21 MB, 시간: 0.02 ms
 
 ### 구분
 
@@ -29,7 +29,7 @@ tag : [programmers ]
 
 ### 제출 일자
 
-2024년 03월 13일 17:13:50
+2024년 03월 13일 17:16:15
 
 ### 문제 설명
 
@@ -90,9 +90,6 @@ tag : [programmers ]
 ## 풀이
 
 
-### 나의 정답 풀이
- 
-
 ```c++
 #include <string>
 #include <vector>
@@ -131,4 +128,4 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
        
     return answer;
 }
-``` 
+```   
