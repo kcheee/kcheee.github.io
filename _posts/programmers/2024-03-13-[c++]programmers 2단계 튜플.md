@@ -150,46 +150,49 @@ tag : [programmers,set,sort stringstream]
 ```c++
 #include <string>
 #include <vector>
+#include <iostream>
 #include <algorithm>
-
+#include <set>
+#include <sstream>
 using namespace std;
 
-int solution(int cacheSize, vector<string> cities) {
-    int answer = 0;
-    
-    //캐시 크기가 0
-    if(cacheSize == 0){
-        answer = cities.size()*5;
-        return answer;
-    }
-    
-    
-    vector<string> cache;
-    for(int i=0; i<cities.size(); i++){
-        string check = cities[i];
-        transform(check.begin(), check.end(), check.begin(), ::tolower);    // 소문자 변환
-        auto it = find(cache.begin(), cache.end(), check);
-        //캐시에 있음
-        if(it != cache.end()){
-            cache.erase(it);
-            cache.push_back(check);
-            answer++;
-            
+bool compare(string a,string b){  return a.size()<b.size();  }
+
+vector<int> solution(string s) {
+    vector<int> answer;
+    vector<string> ans;
+    string str;
+    bool flag=false;
+    // 처음과 끝에 있는 중괄호 삭제
+    s.erase(s.begin());    s.pop_back();
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]=='}') 
+        {
+            flag =false;
+            ans.push_back(str);
+            str.clear();
         }
-        //캐시에 없음
-        else{
-            //캐시에 빈자리 있음
-            if(cache.size() < cacheSize)
-                cache.push_back(check);
-            
-            //캐시에 빈자리 없음
-            else{
-                cache.erase(cache.begin()+0);
-                cache.push_back(check);
-            }
-            answer+=5;
+        if(flag)
+        {
+            str+=s[i];
+        }
+        if(s[i]=='{') flag = true;
+    }  
+    sort(ans.begin(),ans.end(),compare);
+    
+    set<int> result;
+    for(int i=0;i<ans.size();i++)
+    {
+        stringstream ss(ans[i]);
+        string num;
+        while (getline(ss, num, ',')) {
+            // 분리된 숫자 출력
+          int number = stoi(num);
+          if(result.insert(number).second) answer.push_back(number);
         }
     }
+
     
     return answer;
 }
