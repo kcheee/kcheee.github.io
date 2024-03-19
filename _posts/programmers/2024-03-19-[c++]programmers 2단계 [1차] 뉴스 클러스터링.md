@@ -1,8 +1,8 @@
 ---
 layout: post
-title: programmers 1단계 소수찾기
-categories : programmers 1단계
-tag : [programmers,소수]
+title: programmers [1차] 뉴스 클러스터링
+categories : programmers 2단계
+tag : [programmers,transform,map]
 ---
 
 <style>
