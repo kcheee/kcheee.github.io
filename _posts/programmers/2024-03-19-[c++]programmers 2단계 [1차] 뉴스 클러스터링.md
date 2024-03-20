@@ -1,6 +1,6 @@
 ---
 layout: post
-title: programmers [1차] 뉴스 클러스터링
+title: programmers 2단계 [1차] 뉴스 클러스터링
 categories : programmers 2단계
 tag : [programmers,transform,map]
 ---

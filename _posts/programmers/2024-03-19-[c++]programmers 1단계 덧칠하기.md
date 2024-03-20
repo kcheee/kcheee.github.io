@@ -1,6 +1,6 @@
 ---
 layout: post
-title: programmers 덧칠하기
+title: programmers 1단계 덧칠하기
 categories : programmers 1단계
 tag : [programmers,queue]
 ---
