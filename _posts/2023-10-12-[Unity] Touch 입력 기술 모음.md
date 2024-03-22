@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mobile Touch입력기술
-categories : Mobile Touch
+categories : unity Mobile Touch
 tag : [Mobile,Touch]
 ---
 
