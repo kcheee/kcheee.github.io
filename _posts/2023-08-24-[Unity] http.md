@@ -1,7 +1,7 @@
 ---
 layout: post
 title: unity UnityWebRequest받아온 Json데이터 처리
-categories : unity Network 
+categories : unity study http통신 
 tag : [unity,webRequest,GET,POST,PUT,DELETE,Json]
 ---
 

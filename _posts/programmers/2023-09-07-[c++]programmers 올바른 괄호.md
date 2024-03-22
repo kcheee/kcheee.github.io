@@ -1,8 +1,8 @@
 ---
 layout: post
 title: c++ Programmers 올바른괄호
-categories : Programmers 2단계
-tag : [Programmers,2단계]
+categories : programmers 2단계
+tag : [programmers,2단계]
 ---
 
 # [level 2] 올바른 괄호 - 12909 
