@@ -1,6 +1,6 @@
 ---
 layout: post
-title: programmers 2단계 뒤에 있는 큰 수 찾기
+title: programmers 2단계 더 맵게
 categories : programmers 2단계
 tag : [programmers,multiset,next]
 ---
