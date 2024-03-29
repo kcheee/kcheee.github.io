@@ -453,11 +453,9 @@ vector<int> solution(vector<int> fees, vector<string> records) {
     vector<int> answer;
     for(auto n : ans)
     {      
-        if(get<1>(n.second)=="IN")            
-            get<2>(n.second) += 1439-get<0>(n.second);
+        get<2>(n.second) += get<1>(n.second)=="IN" ? 1439-get<0>(n.second):0;
                    
-        if(get<2>(n.second) < fees[0]) {  answer.push_back(fees[1]);  continue; }
-        
+        if(get<2>(n.second) < fees[0])  answer.push_back(fees[1]);         
         else     
             answer.push_back(fees[1] + (((get<2>(n.second) - fees[0]) % fees[2] == 0 ) ? 
                            (get<2>(n.second) - fees[0]) /fees[2] : 
