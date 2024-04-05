@@ -19,7 +19,7 @@ tag : [programmers,map]
 
 ## 풀이
 
-map<char,<vecot<int>> 을 사용하여 value 값에 char가 위치한 인덱스위치 정보를 저장하고, 그 위치가 1이상 차이난다 싶으면 answer에 푸시하는 방법으로 풀었다.
+map<char,<vector<int>> 을 사용하여 value 값에 char가 위치한 인덱스위치 정보를 저장하고, 그 위치가 1이상 차이난다 싶으면 answer에 푸시하는 방법으로 풀었다.
 
 
 ### 나의 정답 풀이
