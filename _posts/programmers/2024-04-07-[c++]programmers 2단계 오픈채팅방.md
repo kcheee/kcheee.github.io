@@ -1,6 +1,6 @@
 ---
 layout: post
-title: programmers 오픈채팅방
+title: programmers 2단계 오픈채팅방
 categories : programmers 2단계
 tag : [programmers,dfs]
 ---
