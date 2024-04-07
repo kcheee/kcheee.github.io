@@ -1,7 +1,7 @@
 ---
 layout: post
-title: programmers pccp 기출문제 석유시추
-categories : programmers pccp
+title: programmers 오픈채팅방
+categories : programmers 2단계
 tag : [programmers,dfs]
 ---
 
