@@ -1,0 +1,119 @@
+---
+layout: post
+title: programmers 2단계 2*n타일링
+categories : programmers 2단계
+tag : [programmers,dp]
+---
+
+<style>
+    table, th, td {
+        color: white;
+    }
+</style>
+
+# [level 2] 2 x n 타일링 - 12900 
+
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12900) 
+
+### 성능 요약
+
+메모리: 3.8 MB, 시간: 0.45 ms
+
+### 구분
+
+코딩테스트 연습 > 연습문제
+
+### 채점결과
+
+정확성: 70.0<br/>효율성: 30.0<br/>합계: 100.0 / 100.0
+
+### 제출 일자
+
+2024년 04월 11일 18:52:17
+
+### 문제 설명
+
+<p data-sider-select-id="ab8bbc3d-1172-487f-b6a7-675d2d4fc787">가로 길이가 2이고 세로의 길이가 1인 직사각형모양의 타일이 있습니다. 이 직사각형 타일을 이용하여 세로의 길이가 2이고 가로의 길이가 n인 바닥을 가득 채우려고 합니다. 타일을 채울 때는 다음과 같이 2가지 방법이 있습니다.</p>
+
+<ul>
+<li>타일을 가로로 배치 하는 경우</li>
+<li>타일을 세로로 배치 하는 경우</li>
+</ul>
+
+<p>예를들어서 n이 7인 직사각형은 다음과 같이 채울 수 있습니다.</p>
+
+<p><img src="https://i.imgur.com/29ANX0f.png" title="" alt="Imgur"></p>
+
+<p>직사각형의 가로의 길이 n이 매개변수로 주어질 때, 이 직사각형을 채우는 방법의 수를 return 하는 solution 함수를 완성해주세요.</p>
+
+<h5>제한사항</h5>
+
+<ul>
+<li>가로의 길이 n은 60,000이하의 자연수 입니다.</li>
+<li>경우의 수가 많아 질 수 있으므로, 경우의 수를 1,000,000,007으로 나눈 나머지를 return해주세요.</li>
+</ul>
+
+<hr>
+
+<h5>입출력 예</h5>
+<table class="table">
+        <thead><tr>
+<th>n</th>
+<th>result</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody>
+      </table>
+<h5>입출력 예 설명</h5>
+
+<p>입출력 예 #1<br>
+다음과 같이 5가지 방법이 있다.</p>
+
+<p><img src="https://i.imgur.com/keiKrD3.png" title="" alt="Imgur"></p>
+
+<p data-sider-select-id="487a9551-6053-4d14-9dec-ba2245e9218d"><img src="https://i.imgur.com/O9GdTE0.png" title="" alt="Imgur"></p>
+
+<p><img src="https://i.imgur.com/IZBmc6M.png" title="" alt="Imgur"></p>
+
+<p><img src="https://i.imgur.com/29LWVzK.png" title="" alt="Imgur"></p>
+
+<p><img src="https://i.imgur.com/z64JbNf.png" title="" alt="Imgur"></p>
+
+
+> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+## 풀이
+
+소요시간 10분
+
+바로 풀었지만 core dumped가 나왔길래 무슨 오류인가 했더니    
+vector<long long> dp(n + 1, 0); 여기서 벡터의 크기를 n으로 해줘서 그랬던 거였다. ㅠㅠ 
+예외처리와 coredumped도 신경써야겠다.
+
+### 나의 틀린 풀이
+
+```c++
+#include <string>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+int solution(int n) {
+    int answer = 0;
+    vector<long long> dp(n + 1, 0); // 벡터의 크기를 n+1로 설정
+    dp[1] = 1; dp[2] = 2;
+    
+    for(int i = 3; i <= n; i++) 
+    {
+        dp[i] = (dp[i-2] + dp[i-1]) % 1000000007;
+    }
+    return dp[n] % 1000000007;
+}
+
+```   
+
