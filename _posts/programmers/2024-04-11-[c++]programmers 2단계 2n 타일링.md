@@ -94,7 +94,7 @@ tag : [programmers,dp]
 vector<long long> dp(n + 1, 0); 여기서 벡터의 크기를 n으로 해줘서 그랬던 거였다. ㅠㅠ 
 예외처리와 coredumped도 신경써야겠다.
 
-### 나의 틀린 풀이
+### 나의 정답 풀이
 
 ```c++
 #include <string>
