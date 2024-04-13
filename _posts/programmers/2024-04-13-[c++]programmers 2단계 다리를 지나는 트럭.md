@@ -99,20 +99,65 @@ tag : [programmers,multiset,map,set]
 
 ## 풀이
 
-소요시간 1시간 30분
+1. 정렬을 하고 weight을 통해 또 한번 정렬
+2. pair( 무게, 단위시간 ) 를 사용한 que vector를 사용해서 풀었다.
 
-1. map을 사용하여 key : genres, value : plays,index를 저장하였고 구조체로 값을 넣자마자 첫번째 요소 plays 큰값으로 compare
-2. 제한사항에 모든 장르는 재생된회수가 다르다 했으므로 장르에 속한 플레이 횟수를 더하고 set에 넣어주고 map을 사용해 key : 장르의 모든 재생횟수 value : genres로 넣어준다.
-3. 가장 많이 재생된 장르부터 값을 뽑아 map->key에 넣어주고 인덱스 번호를 찾아서 answer에 푸시
+하지만 생각을 해보니 트럭이 [7,4,5,6] 이렇게 있을 때 
+문제설명에 나온것처럼 [7,4,5,6] 이 아니라 [7,6,4,5] 일 때 최단시간 7초가 걸려야한다. 아니나 다를까 질문하기 페이지에서 나와 같은 실수를 한 사람이 있었다.. 마냥 최단시간이라 써져있는것을 보고 배열 순서를 바꿔야지 생각을 했던것이다ㅠ. 문제 설명이 너무 불친절하다;; 하;
 
-틀렸었던 반례   
+### 나의 틀린 풀이
 
-입력값 〉	["pop", "pop", "pop", "pop", "pop"], [500, 500, 500, 500, 500]   
-기댓값 〉	[0, 1]   
+```c++
+#include <string>
+#include <vector>
+#include <iostream>
+#include <queue>
+#include <algorithm>
 
-map<string,set<pair<int,int>,ComparePairs>> album; value값이 set일때 pair의첫번째 값과 두번째 값이 둘다 동일해야 중복제거가 되는 줄 알았지만 pair.first 값만 비교하고 중복제거를 하여 값이 사라졌었다.   
-해결방안으로는 multiset을 사용하여 중복이 허용되게 풀었다.
+using namespace std;
 
+int Weight = 0;
+bool compare(int a,int b)
+{
+    return (a+b)>=Weight;
+}
+
+int solution(int bridge_length, int weight, vector<int> truck_weights) {
+    int answer = 0;
+    int t=1;
+    queue<pair<int,int>> q;
+    Weight=weight;
+    int cur_weight=0;
+    
+    sort(truck_weights.begin(),truck_weights.end(),greater<int>());   
+    sort(truck_weights.begin(),truck_weights.end(),compare);
+    
+
+ // 트럭이 모두 다리를 건널 때까지 반복
+    while (!truck_weights.empty() || !q.empty()) {
+        answer++;
+
+        // 다리 위의 트럭을 빼고 무게 갱신
+        if (!q.empty() && answer - q.front().second == bridge_length) {            
+            cur_weight -= q.front().first;
+            q.pop();
+            
+        }
+        // 다음 트럭을 다리에 올릴 수 있는지 확인
+        if (!truck_weights.empty() && cur_weight + truck_weights.back() <= weight) {
+            q.push({truck_weights.back(),answer});
+            
+            cout<<answer;
+            cur_weight += truck_weights.back();
+            truck_weights.pop_back();
+        }
+       
+    }
+
+    
+    return answer;
+}
+```   
 
 ### 나의 정답 풀이
 
@@ -120,50 +165,48 @@ map<string,set<pair<int,int>,ComparePairs>> album; value값이 set일때 pair의
 #include <string>
 #include <vector>
 #include <iostream>
-#include <map>
-#include <set>
+#include <queue>
 #include <algorithm>
 
 using namespace std;
 
-// 속한 노래가 가장 많이 재생된것
-struct ComparePairs {
-    bool operator()(const pair<int, int>& a, const pair<int, int>& b) const {
-        return a.first > b.first; // 첫 번째 요소를 기준으로 내림차순 정렬
-    }
-};
+int Weight = 0;
+bool compare(int a,int b)
+{
+    return (a+b)>=Weight;
+}
 
-vector<int> solution(vector<string> genres, vector<int> plays) {
-    vector<int> answer;
-    map<string,multiset<pair<int,int>,ComparePairs>> album;
-    set<int,greater<int>> cnt;
-    map<int,string> cntname;
+int solution(int bridge_length, int weight, vector<int> truck_weights) {
+    int answer = 0;
+    int t=1;
+    queue<pair<int,int>> q;
+    Weight=weight;
+    int cur_weight=0;
     
-    for(int i=0;i<genres.size();i++)
-        album[genres[i]].insert({plays[i],i});       
-          
-    for(auto it = album.begin();it!=album.end();it++)
-    {
-        int a=0;
-        for(auto it2 : it->second)
-            a+=it2.first;           
-        
-        cnt.insert(a);
-        cntname[a] =it->first;
+
+ // 트럭이 모두 다리를 건널 때까지 반복
+    while (!truck_weights.empty() || !q.empty()) {
+        answer++;
+
+        // 다리 위의 트럭을 빼고 무게 갱신
+        if (!q.empty() && answer - q.front().second == bridge_length) {            
+            cur_weight -= q.front().first;
+            q.pop();
+            
+        }
+        // 다음 트럭을 다리에 올릴 수 있는지 확인
+        if (!truck_weights.empty() && cur_weight + truck_weights.back() <= weight) {
+            q.push({truck_weights.back(),answer});
+            
+            cout<<answer;
+            cur_weight += truck_weights.back();
+            truck_weights.pop_back();
+        }
+       
     }
-    
-    for(auto it : cnt)
-    {
-        int i=0;
-        for(auto it2 : album[cntname[it]])
-        {
-            if(i==2) break;
-            answer.push_back(it2.second);
-            i++;
-        }     
-    }
+
     
     return answer;
 }
-```   
+```
 
