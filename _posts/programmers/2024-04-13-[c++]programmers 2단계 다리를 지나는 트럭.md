@@ -11,17 +11,17 @@ tag : [programmers,multiset,map,set]
     }
 </style>
 
-# [level 3] 베스트앨범 - 42579 
+# [level 2] 다리를 지나는 트럭 - 42583 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42579#) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42583) 
 
 ### 성능 요약
 
-메모리: 3.68 MB, 시간: 0.02 ms
+메모리: 4.21 MB, 시간: 0.03 ms
 
 ### 구분
 
-코딩테스트 연습 > 해시
+코딩테스트 연습 > 스택／큐
 
 ### 채점결과
 
@@ -29,70 +29,110 @@ tag : [programmers,multiset,map,set]
 
 ### 제출 일자
 
-2024년 04월 12일 21:03:32
+2024년 04월 13일 15:30:26
 
 ### 문제 설명
 
-<p>스트리밍 사이트에서 장르 별로 가장 많이 재생된 노래를 두 개씩 모아 베스트 앨범을 출시하려 합니다. 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.</p>
+<p>트럭 여러 대가 강을 가로지르는 일차선 다리를 정해진 순으로 건너려 합니다. 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다. 다리에는 트럭이 최대 bridge_length대 올라갈 수 있으며, 다리는 weight 이하까지의 무게를 견딜 수 있습니다. 단, 다리에 완전히 오르지 않은 트럭의 무게는 무시합니다.</p>
 
-<ol>
-<li>속한 노래가 많이 재생된 장르를 먼저 수록합니다.</li>
-<li>장르 내에서 많이 재생된 노래를 먼저 수록합니다.</li>
-<li>장르 내에서 재생 횟수가 같은 노래 중에서는 고유 번호가 낮은 노래를 먼저 수록합니다.</li>
-</ol>
+<p>예를 들어, 트럭 2대가 올라갈 수 있고 무게를 10kg까지 견디는 다리가 있습니다. 무게가 [7, 4, 5, 6]kg인 트럭이 순서대로 최단 시간 안에 다리를 건너려면 다음과 같이 건너야 합니다.</p>
+<table class="table">
+        <thead><tr>
+<th data-sider-select-id="4e697027-bf2b-4602-84d5-3b48188f35f0">경과 시간</th>
+<th>다리를 지난 트럭</th>
+<th>다리를 건너는 트럭</th>
+<th>대기 트럭</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>0</td>
+<td>[]</td>
+<td>[]</td>
+<td>[7,4,5,6]</td>
+</tr>
+<tr>
+<td>1~2</td>
+<td>[]</td>
+<td>[7]</td>
+<td>[4,5,6]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[7]</td>
+<td>[4]</td>
+<td>[5,6]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>[7]</td>
+<td>[4,5]</td>
+<td>[6]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>[7,4]</td>
+<td>[5]</td>
+<td>[6]</td>
+</tr>
+<tr>
+<td>6~7</td>
+<td>[7,4,5]</td>
+<td>[6]</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>8</td>
+<td>[7,4,5,6]</td>
+<td>[]</td>
+<td>[]</td>
+</tr>
+</tbody>
+      </table>
+<p>따라서, 모든 트럭이 다리를 지나려면 최소 8초가 걸립니다.</p>
 
-<p>노래의 장르를 나타내는 문자열 배열 genres와 노래별 재생 횟수를 나타내는 정수 배열 plays가 주어질 때, 베스트 앨범에 들어갈 노래의 고유 번호를 순서대로 return 하도록 solution 함수를 완성하세요.</p>
+<p>solution 함수의 매개변수로 다리에 올라갈 수 있는 트럭 수 bridge_length, 다리가 견딜 수 있는 무게 weight, 트럭 별 무게 truck_weights가 주어집니다. 이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return 하도록 solution 함수를 완성하세요.</p>
 
-<h5>제한사항</h5>
+<h5>제한 조건</h5>
 
 <ul>
-<li>genres[i]는 고유번호가 i인 노래의 장르입니다.</li>
-<li>plays[i]는 고유번호가 i인 노래가 재생된 횟수입니다.</li>
-<li>genres와 plays의 길이는 같으며, 이는 1 이상 10,000 이하입니다.</li>
-<li>장르 종류는 100개 미만입니다.</li>
-<li>장르에 속한 곡이 하나라면, 하나의 곡만 선택합니다.</li>
-<li>모든 장르는 재생된 횟수가 다릅니다.</li>
+<li>bridge_length는 1 이상 10,000 이하입니다.</li>
+<li>weight는 1 이상 10,000 이하입니다.</li>
+<li>truck_weights의 길이는 1 이상 10,000 이하입니다.</li>
+<li>모든 트럭의 무게는 1 이상 weight 이하입니다.</li>
 </ul>
 
 <h5>입출력 예</h5>
 <table class="table">
         <thead><tr>
-<th>genres</th>
-<th>plays</th>
+<th data-sider-select-id="90fb4dd6-9f61-46fa-b0a5-eab1ec4bfeb8">bridge_length</th>
+<th>weight</th>
+<th>truck_weights</th>
 <th>return</th>
 </tr>
 </thead>
         <tbody><tr>
-<td>["classic", "pop", "classic", "classic", "pop"]</td>
-<td>[500, 600, 150, 800, 2500]</td>
-<td>[4, 1, 3, 0]</td>
+<td data-sider-select-id="08de9e56-16b1-407a-bf00-b384b0eec580">2</td>
+<td>10</td>
+<td>[7,4,5,6]</td>
+<td>8</td>
+</tr>
+<tr>
+<td>100</td>
+<td>100</td>
+<td>[10]</td>
+<td>101</td>
+</tr>
+<tr>
+<td>100</td>
+<td>100</td>
+<td>[10,10,10,10,10,10,10,10,10,10]</td>
+<td>110</td>
 </tr>
 </tbody>
       </table>
-<h5>입출력 예 설명</h5>
+<p><a href="http://icpckorea.org/2016/ONLINE/problem.pdf" target="_blank" rel="noopener">출처</a></p>
 
-<p>classic 장르는 1,450회 재생되었으며, classic 노래는 다음과 같습니다.</p>
-
-<ul>
-<li>고유 번호 3: 800회 재생</li>
-<li>고유 번호 0: 500회 재생</li>
-<li>고유 번호 2: 150회 재생</li>
-</ul>
-
-<p>pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.</p>
-
-<ul>
-<li>고유 번호 4: 2,500회 재생</li>
-<li>고유 번호 1: 600회 재생</li>
-</ul>
-
-<p>따라서 pop 장르의 [4, 1]번 노래를 먼저, classic 장르의 [3, 0]번 노래를 그다음에 수록합니다.</p>
-
-<ul>
-<li>장르 별로 가장 많이 재생된 노래를 최대 두 개까지 모아 베스트 앨범을 출시하므로 2번 노래는 수록되지 않습니다.</li>
-</ul>
-
-<p>※ 공지 - 2019년 2월 28일 테스트케이스가 추가되었습니다.</p>
+<p>※ 공지 - 2020년 4월 06일 테스트케이스가 추가되었습니다.</p>
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
