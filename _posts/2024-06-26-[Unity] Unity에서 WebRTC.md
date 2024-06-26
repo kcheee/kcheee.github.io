@@ -54,9 +54,9 @@ void Start()
 }
 ```
 
-## 
 
-### RtcSender
+
+## RtcSender
 
 `RtcSender` 스크립트는 로컬 미디어 스트림을 초기화하고, 이를 다른 피어와 공유하기 위한 연결을 설정합니다.
 
@@ -103,7 +103,7 @@ IEnumerator CreateOffer(int receiverId) {
 
 ```
 
-### RtcReceiver
+## RtcReceiver
 
 `RtcReceiver`는 `RtcSender`로부터 전송된 미디어 스트림과 네트워크 정보를 수신하고, 이를 통해 피어 간 연결을 완성합니다.
 
