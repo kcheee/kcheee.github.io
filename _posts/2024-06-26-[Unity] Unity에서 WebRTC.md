@@ -9,6 +9,8 @@ tag : [WebRTC]
 
 ### [스크립트 파일](https://github.com/k0-juhyun/EduVerse/tree/BetaMain/Assets/02.%20Scripts/KCH/Rtc)
 
+![diagram (2)](https://github.com/kcheee/kcheee/assets/86779278/0e1d6daf-1eea-4bfb-bb64-b5613969e264)
+
 
 ## 구글의 스턴 서버 사용
 
