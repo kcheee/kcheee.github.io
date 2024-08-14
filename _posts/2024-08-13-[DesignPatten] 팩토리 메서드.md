@@ -1,9 +1,10 @@
 ---
 layout: post
 title: [Design Pattern] Factory Method Pattern
-categories : DesignPattern Factory Method Pattern
-tag : [Design Pattern,Factory Method Pattern]
+categories : DesignPattern FactoryMethodPattern
+tag : [Design Pattern,FactoryMethodPattern]
 ---
+   
 
 # 팩토리 메서드
 
