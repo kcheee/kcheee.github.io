@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Design Pattern] Factory Method Pattern
+title: Factory Method Pattern
 categories : DesignPattern FactoryMethodPattern
 tag : [Design Pattern,FactoryMethodPattern]
 ---
