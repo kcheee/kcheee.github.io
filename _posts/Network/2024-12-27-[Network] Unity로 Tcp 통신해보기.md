@@ -5,7 +5,7 @@ categories : Network TCP
 tag : [Network,TCP]
 ---
    
-# TCP 통신을 통해 Unity에서 Text 통신
+# TCP 통신을 통해 Unity에서 통신
 
 ## 1. 소켓 생성
 클라이언트에서는 **TcpClient** 를, 서버에서는 **TcpListener를** 생성하여 네트워크 연결을 준비합니다.
