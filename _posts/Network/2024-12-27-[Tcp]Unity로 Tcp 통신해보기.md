@@ -8,7 +8,7 @@ tag : [Network,TCP]
 # TCP 통신을 통해 Unity에서 Text 통신신
 
 ## 1. 소켓 생성
-클라이언트에서는 `TcpClient`를, 서버에서는 `TcpListener`를 생성하여 네트워크 연결을 준비합니다.
+클라이언트에서는 **TcpClient** 를, 서버에서는 **TcpListener를** 생성하여 네트워크 연결을 준비합니다.
 
 ```c#
 // Client
@@ -60,7 +60,7 @@ void AcceptTcpClient(IAsyncResult ar)
 ---
 
 ## 5. 통신
-클라이언트와 서버는 `NetworkStream`을 통해 데이터를 주고받습니다.
+클라이언트와 서버는 **NetworkStream**을 통해 데이터를 주고받습니다.
 
 ### 클라이언트
 ```c#
@@ -104,7 +104,7 @@ void Broadcast(string data, List<ServerClient> cl)
 ---
 
 ## 6. 통신 종료
-연결 종료 및 리소스 해제는 `Close()` 메서드로 관리합니다.
+연결 종료 및 리소스 해제는 **Close()** 메서드로 관리합니다.
 
 ### 클라이언트
 ```c#
