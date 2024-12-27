@@ -135,7 +135,6 @@ foreach (ServerClient c in disconnectList)
 
 <details>
 <summary>Server</summary>
-<div markdown="1">
 
 ```C#
 using System.Collections;
@@ -297,14 +296,14 @@ public class ServerClient
 
 ```
 
-</div>
+
 </details>
 
 ## Client
 
 <details>
 <summary>Client</summary>
-<div markdown="1">
+
 
 ```C#
 using System.Collections;
@@ -413,14 +412,14 @@ public class Client : MonoBehaviour
 
 ```
 
-</div>
+
 </details>
 
 ## Chat
 
 <details>
 <summary>Chat</summary>
-<div markdown="1">
+
 
 ```c#
 using UnityEngine;
@@ -461,5 +460,5 @@ public class Chat : MonoBehaviour
 
 ```
 
-</div>
+
 </details>
